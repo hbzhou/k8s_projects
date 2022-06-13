@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: "2022-06-13T14:17:07Z"
+  generation: 3
+  name: highscore
+  namespace: arcade
+  resourceVersion: "55218"
+  uid: fc16f573-a609-4225-a686-cea3dcf539d7
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: demo.localdev.me
+    http:
+      paths:
+      - backend:
+          service:
+            name: highscore
+            port:
+              number: 80
+        path: /highscore
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - hostname: localhost

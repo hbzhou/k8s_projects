@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-06-11T15:18:49Z"
+  labels:
+    app: highscore
+  name: highscore
+  namespace: arcade
+  resourceVersion: "38870"
+  uid: 7812502a-ecb0-41cf-9518-9bdd42b770c5
+spec:
+  clusterIP: 10.111.210.2
+  clusterIPs:
+  - 10.111.210.2
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: highscore
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-06-13T14:15:11Z"
+  labels:
+    app: platform
+  name: platform
+  namespace: arcade
+  resourceVersion: "53947"
+  uid: 071c8832-7623-4254-9be9-642e08eeb0b6
+spec:
+  clusterIP: 10.111.33.85
+  clusterIPs:
+  - 10.111.33.85
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: platform
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
