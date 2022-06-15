@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: "2022-06-15T13:32:16Z"
+  generation: 1
+  name: platform-tls
+  namespace: arcade
+  resourceVersion: "13252"
+  uid: cba530b0-da59-42e5-81dc-225d8df98581
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: demo.localdev.me
+    http:
+      paths:
+      - backend:
+          service:
+            name: platform
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - demo.localdev.me
+    secretName: demo-localdev-https
+status:
+  loadBalancer: {}
