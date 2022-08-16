@@ -3,14 +3,10 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-  creationTimestamp: "2022-06-11T15:08:24Z"
-  generation: 2
   labels:
     app: game
   name: game
   namespace: arcade
-  resourceVersion: "55622"
-  uid: bed9371e-f54c-4363-a98b-e0d07802ea32
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
@@ -25,7 +21,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: game
     spec:
@@ -44,22 +39,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 3
-  conditions:
-  - lastTransitionTime: "2022-06-11T15:08:24Z"
-    lastUpdateTime: "2022-06-11T15:08:29Z"
-    message: ReplicaSet "game-8576589dcc" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  - lastTransitionTime: "2022-06-13T14:35:33Z"
-    lastUpdateTime: "2022-06-13T14:35:33Z"
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  observedGeneration: 2
-  readyReplicas: 3
-  replicas: 3
-  updatedReplicas: 3

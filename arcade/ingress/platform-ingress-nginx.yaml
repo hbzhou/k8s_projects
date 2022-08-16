@@ -1,12 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  creationTimestamp: "2022-06-13T14:16:58Z"
-  generation: 2
   name: platform
   namespace: arcade
-  resourceVersion: "54784"
-  uid: 672c7b44-b827-4c16-9537-b29e749c1520
 spec:
   ingressClassName: nginx
   rules:
@@ -20,7 +16,3 @@ spec:
               number: 80
         path: /
         pathType: Prefix
-status:
-  loadBalancer:
-    ingress:
-    - hostname: localhost
